@@ -34,10 +34,11 @@ var SubNavigation = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var children = this.props.children.map ? this.props.children : [this.props.children];
       return _react2.default.createElement(
         "ul",
         { className: "link-list" },
-        this.props.children.map(function (child, key) {
+        children.map(function (child, key) {
           return _react2.default.createElement(
             "li",
             { key: key, className: (child.props.to && _this2.props.navigation.getIn(["data", "location"]).match(child.props.to) ? "is-selected" : "") + " link-list-element" },
